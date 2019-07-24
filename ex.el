@@ -1,4 +1,4 @@
-#!/mingw64/bin/emacs --script
+#!emacs --script
 (require 'viper)
 
 ;;;; function (re)definitions
@@ -23,7 +23,7 @@
 
 ;;;; print error/welcome messages
 (when (< (length argv) 1)
-  (message "ex.el -- ex in emacslisp")
+  (message "ex.el -- ex in Emacs Lisp")
   (message "Should be called like this: ./ex.el [-c command]... file...")
   (message "Args given: %s" argv))
 

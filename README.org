@@ -4,10 +4,51 @@
 A small line-oriented text editor like ed or ex. ex.el is meant to be run directly from the command line and it will use emacs's script mode, i.e. no emacs UI will be shown.
 The editing functionality is mostly just a thin layer on top of viper-mode's ~viper-ex~ command. Because of this, ex.el's behavior is mostly defined as "whatever viper-ex does". Only the insert/append/change commands were added to provide the minimal functionality.
 ** Supported command line options
-In general, ex.el should be run like this: ~./ex.el [options]... file...~ There is currently no specific functionality for editing more than one file. Additionally, the following options are supported:
-~-c command~: A command that is run after the file is loaded. Can be used multiple times
-~-p character~: Show ~character~ as a prompt
+In general, ex.el should be run like this: 
+
+~./ex.el [options]... file...~ 
+
+There is currently no specific functionality for editing more than one file. Additionally, the following options are supported:
+- ~-c command~: A command that is run after the file is loaded. Can be used multiple times
+- ~-p character~: Show ~character~ as a prompt
+** Example session
+~$~ indicates a shell prompt.
+
+#+BEGIN_SRC
+$ ./ex.el -p ":" editors.txt
+:i
+I love vim.
+vim is a great editor.
+.
+:wq
+`c:/Users/Administrator/Documents/GitHub/emacs-toys/editors.txt' [New file] 2 lines, 35 characters
+
+$ ./ex.el -c "%s/vim/Emacs/g" -c "wq" editors.txt
+`c:/Users/Administrator/Documents/GitHub/emacs-toys/editors.txt' 2 lines, 39 characters
+
+$ ./ex.el -c "%p" -c "q" editors.txt
+I love Emacs.
+Emacs is a great editor.
+
+#+END_SRC
 * repl.el
 A small Emacs Lisp REPL for the command line. Like ex.el, this is supposed to be run as a command line script.
+** Example Session
+#+BEGIN_SRC
+$ ./repl.el
+
+GERMANY -- the GNU Emacs REPL with MANY bugs, V 0.1
+Copyright 2018 programmbauer
+
+> (* 1 2 3 4 5)
+120
+> (defun square (x) (* x x))
+square
+> (square 25)
+625
+> (kill-emacs)
+
+$
+#+END_SRC
 * eval.el
 A minimalistic Lisp interpreter written in Emacs Lisp. Read the comments for additional information.

@@ -1,6 +1,7 @@
+#!emacs --script
 ;;; -*- lexical-binding: t; -*-
 
-;;; run with 'emacs -batch -l repl.el'
+;;; run explicitly with 'emacs -batch -l repl.el'
 
 (message " ")
 (message "GERMANY -- the GNU Emacs REPL with MANY bugs, V 0.1")
