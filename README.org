@@ -32,7 +32,7 @@ Emacs is a great editor.
 
 #+END_SRC
 * repl.el
-A small Emacs Lisp REPL for the command line. Like ex.el, this is supposed to be run as a command line script.
+A small Emacs Lisp REPL for the command line. Like ex.el, this is supposed to be run as a command line script. *Note that repl.el currently does not accept multi-line input. You have to enter complete S-Expressions in a single (logical) line!*
 ** Example Session
 #+BEGIN_SRC
 $ ./repl.el
