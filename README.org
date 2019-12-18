@@ -52,5 +52,5 @@ $
 #+END_SRC
 * eval.el
 A minimalistic Lisp interpreter written in Emacs Lisp. Read the comments for additional information.
-* roll.dice.el
+* roll-dice.el
 A simple dice-roller script. It provides a single interactive function ~roll-dice~, which prompts the user to enter the required dice in the usual Notation (e.g. 1d20+7, 3d8-4, ...)
